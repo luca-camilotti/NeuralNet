@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>luke.ai</groupId>
+  <artifactId>neural-net</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Neural Network</name>
+  <description>A neural network project in Java</description>
+  
+  <properties>
+    <maven.compiler.source>23</maven.compiler.source>
+    <maven.compiler.target>23</maven.compiler.target>
+</properties>
+  
+  <dependencies>
+  
+  <!-- Source: https://mvnrepository.com/artifact/org.deeplearning4j/deeplearning4j-core -->
+<dependency>
+    <groupId>org.deeplearning4j</groupId>
+    <artifactId>deeplearning4j-core</artifactId>
+    <version>1.0.0-M2.1</version>
+    <scope>compile</scope>
+</dependency>
+
+<!-- Source: https://mvnrepository.com/artifact/org.nd4j/nd4j-native-platform -->
+<!--dependency>
+    <groupId>org.nd4j</groupId>
+    <artifactId>nd4j-native-platform</artifactId>
+    <version>1.0.0-M2.1</version>
+    <scope>compile</scope>
+</dependency -->
+
+    <!-- Core di ND4J Native -->
+    <dependency>
+        <groupId>org.nd4j</groupId>
+        <artifactId>nd4j-native</artifactId>
+        <version>1.0.0-M2.1</version>
+    </dependency>
+
+    <!-- Binario nativo C++ SOLO per Windows x86_64 -->
+    <dependency>
+        <groupId>org.nd4j</groupId>
+        <artifactId>nd4j-native</artifactId>
+        <version>1.0.0-M2.1</version>
+        <classifier>windows-x86_64</classifier>
+    </dependency>
+
+
+  
+  </dependencies>
+</project>
