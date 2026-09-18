@@ -20,8 +20,7 @@ public class NeuralNetParity {
 
 		public static void main(String[] args) {
 
-			var input = Nd4j.create(new double [][] 
-					{
+			double [][] trainingData = new double [][] {
 				{0,1,0,0,0,0,0,0},
 				{0,1,0,0,1,0,0,0},
 				{1,0,0,0,0,0,0,0},
@@ -40,8 +39,22 @@ public class NeuralNetParity {
 				{0,0,0,0,0,0,0,0},
 				{1,0,0,0,1,0,0,1},
 				{1,0,1,0,1,0,0,1}
-					});
+			};
+			
+			double [][] expectedResults = new double [trainingData.length][1];
+			// Calculate expected results (parity bit) for training data:
+			for(int i=0; i<expectedResults.length; i++) {
+				int sum = 0;
+				for(int j=0; j<trainingData[i].length; j++)
+					sum+=trainingData[i][j];
+				expectedResults[i][0] = (sum%2);
+			}
+			
+			var input = Nd4j.create(trainingData);
 
+			var output = Nd4j.create(expectedResults);
+			
+			/*
 			var output = Nd4j.create(new double [][] 
 					{
 				{1},
@@ -63,6 +76,7 @@ public class NeuralNetParity {
 				{1},
 				{0}
 					});
+			*/
 			
 			var dataset = new DataSet(input, output);
 			
